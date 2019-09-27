@@ -466,20 +466,29 @@
                 <h1 id="architecture">Architecture</h1>
 <p>Technically, providers and provisioners are all implementations of the Extension interface.</p>
 <p><img alt="" src="../interlook-draw.png" /></p>
-<p>Currently supported Providers:
- * ~~Docker~~
- * Docker Swarm (not tested yet)
- * Docker Enterprise (Swarm)
- * ~~Consul Catalog~~</p>
-<p>Currently supported Provisioners:
- * IP:
-    * ipalloc (an embedded simple local IPAM)
-    * ~~GestioIP~~
- * DNS:
-    * Consul (DNS records will contain Consul specific suffix: .service.<em>consul-domain</em>, use CoreDNS with rewrite)
- * Load Balancer:
-    * Kemp LoadMaster
-    * F5 Big-IP LTM</p>
+<p>Currently supported Providers:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Docker Enterprise (Swarm)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Docker Swarm (not tested yet)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Consul Catalog</li>
+</ul>
+<p>Currently supported Provisioners:</p>
+<ul>
+<li>IP:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> ipalloc (an embedded simple local IPAM)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> GestioIP</li>
+</ul>
+</li>
+<li>DNS:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Consul (DNS records will contain Consul specific suffix: .service.<em>consul-domain</em>, use CoreDNS with rewrite)</li>
+</ul>
+</li>
+<li>Load Balancer:<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Kemp LoadMaster</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> F5 Big-IP LTM</li>
+</ul>
+</li>
+</ul>
                 
                   
                 

@@ -539,13 +539,13 @@
                 <h1 id="developing-an-interlook-extension">Developing an Interlook extension</h1>
 <h2 id="interface">Interface</h2>
 <p>An Interlook extension must first implement the <code>Extension</code> interface:</p>
-<pre><code class="golang">type Extension interface {
+<div class="highlight"><pre><span></span>type Extension interface {
 
     Start(receive &lt;-chan service.Message, send chan&lt;- service.Message) error
 
     Stop() error
 }
-</code></pre>
+</pre></div>
 
 <p>The <code>Start</code> method will be used by the core to start the extension. The core will provide a receive and send channels for the exchanged messages.</p>
 <p>The <code>Stop</code> method is used to shut the extension down. When invoked, it must make sure that <code>Start</code> method is stopped and return to the invoker.</p>
@@ -553,10 +553,10 @@
 <p>The configuration is read at <code>interlook</code> startup. The config package must import the extension's configuration object.</p>
 <p><code>Interlook</code> configuration is a yaml formatted file and the Go object is config.ServerConfiguration.</p>
 <p>Here is an example for an IPAM IPAlloc extension:</p>
-<pre><code class="golang">    IPAM struct {
+<div class="highlight"><pre><span></span>    IPAM struct {
         IPAlloc *ipalloc.Provisioner `yaml:&quot;ipalloc,omitempty&quot;`
     } `yaml:&quot;ipam,omitempty&quot;`
-</code></pre>
+</pre></div>
 
 <p>On startup, <code>interlook</code> will start all extensions that are configured in the core.workflow setup. If a configured extension fails to start, interlook will panic.</p>
 <h2 id="messages">Messages</h2>

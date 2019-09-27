@@ -520,24 +520,24 @@
 <li><code>policy</code>: a policy, attached to a global VS (<code>golbalVS</code>) is maintained for each service</li>
 </ul>
 <h2 id="configuration">Configuration</h2>
-<pre><code class="yaml">  f5ltm:
-    httpEndpoint: https://10.32.20.100
-    username: api
-    password: restaccess
-    authProvider: tmos
-    authToken:
-    httpPort: 80
-    httpsPort: 443
-    monitorName: tcp
-    tcpProfile:
-    partition: interlook
-    loadBalancingMode: least-connections-member
-    # interlook has 2 ways to update BigIP:
-        # &quot;vs&quot;: a virtual server is created for each service
-        # &quot;policy&quot;: a policy is added to a global vs for ech service
-    updateMode: vs
-    globalVS:
-</code></pre>
+<div class="highlight"><pre><span></span>  <span class="nt">f5ltm</span><span class="p">:</span>
+    <span class="nt">httpEndpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://10.32.20.100</span>
+    <span class="nt">username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">api</span>
+    <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">restaccess</span>
+    <span class="nt">authProvider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tmos</span>
+    <span class="nt">authToken</span><span class="p">:</span>
+    <span class="nt">httpPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+    <span class="nt">httpsPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">443</span>
+    <span class="nt">monitorName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp</span>
+    <span class="nt">tcpProfile</span><span class="p">:</span>
+    <span class="nt">partition</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">interlook</span>
+    <span class="nt">loadBalancingMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">least-connections-member</span>
+    <span class="c1"># interlook has 2 ways to update BigIP:</span>
+        <span class="c1"># &quot;vs&quot;: a virtual server is created for each service</span>
+        <span class="c1"># &quot;policy&quot;: a policy is added to a global vs for ech service</span>
+    <span class="nt">updateMode</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">vs</span>
+    <span class="nt">globalVS</span><span class="p">:</span>
+</pre></div>
                 
                   
                 

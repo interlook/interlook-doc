@@ -593,34 +593,34 @@ It then sends an event to the corresponding extension.</p>
 <h3 id="1-provider-to-workflow">1. Provider to workflow</h3>
 <p>Docker provider pushes a newly published service.</p>
 <p>The listener gets it and inject it to the workflow</p>
-<pre><code>|Provider|  -&gt;      Listener       -&gt;       |workflow|  
+<div class="highlight"><pre><span></span>|Provider|  -&gt;      Listener       -&gt;       |workflow|  
                     state:provider.docker
                     wip:false
-</code></pre>
+</pre></div>
 
 <h3 id="2-the-workflowcontroller-detects-the-new-entry">2. The workflowController detects the new entry</h3>
 <p>workflowController check current state against the expected state. </p>
 <p>If it does not match, sets the next step/extension, changes the status to "wip" and sends the message to the next extension (IPAM) </p>
-<pre><code>|workflow|  -&gt;      flowControl     -&gt;      |IPAM|
+<div class="highlight"><pre><span></span>|workflow|  -&gt;      flowControl     -&gt;      |IPAM|
                     state:ipam.ipalloc
                     wip:true
-</code></pre>
+</pre></div>
 
 <h3 id="3-the-ipam-extension-sends-back-a-message">3. The IPAM extension sends back a message</h3>
 <p>IPAM extension does it's job and gets an IP for us. Then it sends back the message</p>
-<pre><code>|IPAM|      -&gt;      Listener     -&gt;      |workflow|
+<div class="highlight"><pre><span></span>|IPAM|      -&gt;      Listener     -&gt;      |workflow|
 state:ipam.file     state:ipam.ipalloc
 wip:true            wip:false
-</code></pre>
+</pre></div>
 
 <h3 id="4-closing-the-flow">4. Closing the flow</h3>
 <p>In our example the ipalloc extension is the last step of the workflow. </p>
 <p>The flow control module detects that "ipam.ipalloc" is the last step in our workflow. </p>
 <p>As we have reached the final step, it updates the entry's state to deployed, closing the flow.</p>
-<pre><code>|workflow|
+<div class="highlight"><pre><span></span>|workflow|
 state:deployed
 wip:false
-</code></pre>
+</pre></div>
                 
                   
                 

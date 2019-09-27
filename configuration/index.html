@@ -470,25 +470,25 @@
 <li>core:</li>
 </ul>
 <p>Configure interlook's core module</p>
-<pre><code class="yaml">core:
-  logLevel: DEBUG
-  listenPort: 8080
-  logFile : stdout
-  # workflowSteps: comma separated succession of extenstions
-  workflowSteps: provider.swarm,ipam.ipalloc,lb.f5ltm
-  # where the workflow entries are saved
-  workflowEntriesFile: ./share/flowentries.db
-  # how often should the workflow controller run
-  workflowActivityLauncherInterval: 3s
-  # how often should the workflow housekeeper run
-  workflowHousekeeperInterval: 60s
-  # close the entry in error if work in progress for longer than
-  serviceWIPTimeout: 90s
-  # remove entries that have been closed for time
-  cleanUndeployedServiceAfter: 10m
-  # trigger a refresh request to provider if service has not been updated since
-  serviceMaxLastUpdated: 90s
-</code></pre>
+<div class="highlight"><pre><span></span><span class="nt">core</span><span class="p">:</span>
+  <span class="nt">logLevel</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">DEBUG</span>
+  <span class="nt">listenPort</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+  <span class="nt">logFile </span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">stdout</span>
+  <span class="c1"># workflowSteps: comma separated succession of extenstions</span>
+  <span class="nt">workflowSteps</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">provider.swarm,ipam.ipalloc,lb.f5ltm</span>
+  <span class="c1"># where the workflow entries are saved</span>
+  <span class="nt">workflowEntriesFile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">./share/flowentries.db</span>
+  <span class="c1"># how often should the workflow controller run</span>
+  <span class="nt">workflowActivityLauncherInterval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3s</span>
+  <span class="c1"># how often should the workflow housekeeper run</span>
+  <span class="nt">workflowHousekeeperInterval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">60s</span>
+  <span class="c1"># close the entry in error if work in progress for longer than</span>
+  <span class="nt">serviceWIPTimeout</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">90s</span>
+  <span class="c1"># remove entries that have been closed for time</span>
+  <span class="nt">cleanUndeployedServiceAfter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10m</span>
+  <span class="c1"># trigger a refresh request to provider if service has not been updated since</span>
+  <span class="nt">serviceMaxLastUpdated</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">90s</span>
+</pre></div>
 
 <p>The other config sections configure the <code>provider</code> and the <code>provisioner(s)</code>. </p>
 <p>Each component has its own config section. Refer to each extension's doc for configuration reference.</p>

@@ -558,30 +558,30 @@
 <p>Returns JSON showing configured workflow steps</p>
 <h2 id="services"><code>/services</code></h2>
 <p>Retuns JSON listing the services</p>
-<pre><code class="json">{
-    &quot;myservice&quot;: {
-        &quot;wip_time&quot;: &quot;0001-01-01T00:00:00Z&quot;,
-        &quot;state&quot;: &quot;deployed&quot;,
-        &quot;expected_state&quot;: &quot;deployed&quot;,
-        &quot;time_detected&quot;: &quot;2019-09-27T11:32:23.098856973+02:00&quot;,
-        &quot;last_update&quot;: &quot;2019-09-27T23:28:48.403824618+02:00&quot;,
-        &quot;service&quot;: {
-            &quot;name&quot;: &quot;myservice&quot;,
-            &quot;hosts&quot;: [
-                &quot;10.32.2.41&quot;,
-                &quot;10.32.2.46&quot;,
-                &quot;10.32.2.42&quot;
-            ],
-            &quot;port&quot;: 30004,
-            &quot;public_ip&quot;: &quot;10.32.30.2&quot;,
-            &quot;dns_name&quot;: [
-                &quot;myapp.mydomain.me&quot;
-            ]
-        },
-        &quot;close_time&quot;: &quot;2019-09-27T21:33:59.774608662+02:00&quot;
-    }
-}
-</code></pre>
+<div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;myservice&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;wip_time&quot;</span><span class="p">:</span> <span class="s2">&quot;0001-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;deployed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;expected_state&quot;</span><span class="p">:</span> <span class="s2">&quot;deployed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;time_detected&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-27T11:32:23.098856973+02:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;last_update&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-27T23:28:48.403824618+02:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;service&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;myservice&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;hosts&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;10.32.2.41&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;10.32.2.46&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;10.32.2.42&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;port&quot;</span><span class="p">:</span> <span class="mi">30004</span><span class="p">,</span>
+            <span class="nt">&quot;public_ip&quot;</span><span class="p">:</span> <span class="s2">&quot;10.32.30.2&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;dns_name&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;myapp.mydomain.me&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;close_time&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-09-27T21:33:59.774608662+02:00&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 
 <h2 id="version"><code>/version</code></h2>
 <p>Retuns <code>interlook</code>'s version</p>

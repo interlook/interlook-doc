@@ -521,16 +521,16 @@
 <p>Additional service label(s) can be configured to further filter the <code>interlook</code> scan. 
 This needs to be configured as <code>labelSelector</code> in the configuration.  </p>
 <h2 id="configuration">Configuration</h2>
-<pre><code class="yaml">provider:
-  swarm:
-    endpoint: tcp://ucp.csnet.me:443
-    labelSelector:
-      - l7aas
-    tlsCa: /home/michael/dkr/bundle/interlook/ca.pem
-    tlsCert: /home/michael/dkr/bundle/interlook/cert.pem
-    tlsKey: /home/michael/dkr/bundle/interlook/key.pem
-    pollInterval: 5s
-</code></pre>
+<div class="highlight"><pre><span></span><span class="nt">provider</span><span class="p">:</span>
+  <span class="nt">swarm</span><span class="p">:</span>
+    <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tcp://ucp.csnet.me:443</span>
+    <span class="nt">labelSelector</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">l7aas</span>
+    <span class="nt">tlsCa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/michael/dkr/bundle/interlook/ca.pem</span>
+    <span class="nt">tlsCert</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/michael/dkr/bundle/interlook/cert.pem</span>
+    <span class="nt">tlsKey</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/home/michael/dkr/bundle/interlook/key.pem</span>
+    <span class="nt">pollInterval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5s</span>
+</pre></div>
                 
                   
                 
