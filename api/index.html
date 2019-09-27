@@ -36,7 +36,7 @@
     
     
       
-        <title>Concept - interlook</title>
+        <title>API - interlook</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#concept" tabindex="1" class="md-skip">
+      <a href="#apis" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
               interlook
             </span>
             <span class="md-header-nav__topic">
-              Concept
+              API
             </span>
           
         </div>
@@ -178,20 +178,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Concept" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../concept/" title="Concept" class="md-nav__link">
       Concept
     </a>
-    
   </li>
 
     
@@ -415,11 +406,70 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../api/" title="API" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        API
+      </label>
+    
+    <a href="./" title="API" class="md-nav__link md-nav__link--active">
       API
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#health" title="/health" class="md-nav__link">
+    /health
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" title="/workflow" class="md-nav__link">
+    /workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services" title="/services" class="md-nav__link">
+    /services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" title="/version" class="md-nav__link">
+    /version
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -452,6 +502,43 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#health" title="/health" class="md-nav__link">
+    /health
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" title="/workflow" class="md-nav__link">
+    /workflow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#services" title="/services" class="md-nav__link">
+    /services
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" title="/version" class="md-nav__link">
+    /version
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -463,7 +550,41 @@
               
                 
                 
-                <h1 id="concept">Concept</h1>
+                <h1 id="apis">APIs</h1>
+<p>Basic APIs for viewing <code>interlook</code> information</p>
+<h2 id="health"><code>/health</code></h2>
+<p>Returns HTTP 200</p>
+<h2 id="workflow"><code>/workflow</code></h2>
+<p>Returns JSON showing configured workflow steps</p>
+<h2 id="services"><code>/services</code></h2>
+<p>Retuns JSON listing the services</p>
+<pre><code class="json">{
+    &quot;myservice&quot;: {
+        &quot;wip_time&quot;: &quot;0001-01-01T00:00:00Z&quot;,
+        &quot;state&quot;: &quot;deployed&quot;,
+        &quot;expected_state&quot;: &quot;deployed&quot;,
+        &quot;time_detected&quot;: &quot;2019-09-27T11:32:23.098856973+02:00&quot;,
+        &quot;last_update&quot;: &quot;2019-09-27T23:28:48.403824618+02:00&quot;,
+        &quot;service&quot;: {
+            &quot;name&quot;: &quot;myservice&quot;,
+            &quot;hosts&quot;: [
+                &quot;10.32.2.41&quot;,
+                &quot;10.32.2.46&quot;,
+                &quot;10.32.2.42&quot;
+            ],
+            &quot;port&quot;: 30004,
+            &quot;public_ip&quot;: &quot;10.32.30.2&quot;,
+            &quot;dns_name&quot;: [
+                &quot;myapp.mydomain.me&quot;
+            ]
+        },
+        &quot;close_time&quot;: &quot;2019-09-27T21:33:59.774608662+02:00&quot;
+    }
+}
+</code></pre>
+
+<h2 id="version"><code>/version</code></h2>
+<p>Retuns <code>interlook</code>'s version</p>
                 
                   
                 
@@ -484,7 +605,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../f5ltm/" title="f5ltm" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -493,19 +614,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                f5ltm
               </span>
             </div>
           </a>
         
         
-          <a href="../architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../extension/" title="Extending Interlook" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Architecture
+                Extending Interlook
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
