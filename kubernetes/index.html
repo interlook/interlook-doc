@@ -36,7 +36,7 @@
     
     
       
-        <title>Concept - interlook</title>
+        <title>Kubernetes - interlook</title>
       
     
     
@@ -75,7 +75,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#concept" tabindex="1" class="md-skip">
+      <a href="#kubernetes-provider" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
               interlook
             </span>
             <span class="md-header-nav__topic">
-              Concept
+              Kubernetes
             </span>
           
         </div>
@@ -178,20 +178,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-    <a href="./" title="Concept" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../concept/" title="Concept" class="md-nav__link">
       Concept
     </a>
-    
   </li>
 
     
@@ -223,10 +214,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       Provider
@@ -242,11 +235,49 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kubernetes
+      </label>
+    
+    <a href="./" title="Kubernetes" class="md-nav__link md-nav__link--active">
       Kubernetes
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -464,6 +495,22 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" title="Configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -475,7 +522,27 @@
               
                 
                 
-                <h1 id="concept">Concept</h1>
+                <h1 id="kubernetes-provider">KUbernetes provider</h1>
+<p><code>interlook</code> can watch Kubernetes cluster to detect <a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport"><code>NodePort</code></a> services that needs to be "published". </p>
+<p>The following labels must be setup at service level for <code>interlook</code> to detect them:</p>
+<ul>
+<li><code>interlook.hosts</code>: comma separated list of hosts to be published</li>
+<li><code>interlook.port</code>: the application's target port</li>
+<li><code>interlook.ssl</code>: boolean, indicates if application is ssl exposed</li>
+</ul>
+<p>Additional service label(s) can be configured to further filter the <code>interlook</code> service scan. 
+This needs to be configured as <code>labelSelector</code> in the configuration.  </p>
+<h2 id="configuration">Configuration</h2>
+<div class="highlight"><pre><span></span><span class="nt">provider</span><span class="p">:</span>
+    <span class="nt">kubernetes</span><span class="p">:</span>
+        <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://192.168.39.89:6443</span>
+        <span class="nt">labelSelector</span><span class="p">:</span>
+            <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">l7aas</span>
+        <span class="nt">tlsCa</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/kube/ca.crt</span>
+        <span class="nt">tlsCert</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/kube/client.crt</span>
+        <span class="nt">tlsKey</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/path/to/kube/client.key</span>
+        <span class="nt">pollInterval</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">15s</span>
+</pre></div>
                 
                   
                 
@@ -496,7 +563,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../configuration/" title="Configuration" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -505,19 +572,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Configuration
               </span>
             </div>
           </a>
         
         
-          <a href="../architecture/" title="Architecture" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../swarm/" title="Swarm" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Architecture
+                Swarm
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
